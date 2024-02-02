@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Lorca Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">    
+ 
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .calculator {
+            max-width: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator container">
+    <input type="text" id="display" class="form-control mb-2  p-4" readonly>
+    <div class="row">
+        <button class="btn btn-secondary col" onclick="appendToDisplay('7')">7</button>
+        <button class="btn btn-secondary col" onclick="appendToDisplay('8')">8</button>
+        <button class="btn btn-secondary col" onclick="appendToDisplay('9')">9</button>
+        <button class="btn btn-warning col" onclick="appendToDisplay('/')">/</button>
+    </div>
+    <div class="row">
+        <button class="btn btn-secondary col" onclick="appendToDisplay('4')">4</button>
+        <button class="btn btn-secondary col" onclick="appendToDisplay('5')">5</button>
+        <button class="btn btn-secondary col" onclick="appendToDisplay('6')">6</button>
+        <button class="btn btn-warning col" onclick="appendToDisplay('*')">*</button>
+    </div>
+    <div class="row">
+        <button class="btn btn-secondary col" onclick="appendToDisplay('1')">1</button>
+        <button class="btn btn-secondary col" onclick="appendToDisplay('2')">2</button>
+        <button class="btn btn-secondary col" onclick="appendToDisplay('3')">3</button>
+        <button class="btn btn-warning col" onclick="appendToDisplay('-')">-</button>
+    </div>
+    <div class="row">
+        <button class="btn btn-secondary col" onclick="appendToDisplay('0')">0</button>
+        <button class="btn btn-secondary col" onclick="appendToDisplay('.')">.</button>
+        <button class="btn btn-success col" onclick="calculate()">=</button>
+        <button class="btn btn-warning col" onclick="appendToDisplay('+')">+</button>
+    </div>
+    <div class="row">
+        <button class="btn btn-danger col" onclick="clearDisplay()">C</button>
+    </div>
+</div>
+
+<script>
+    //Diypa571
+    // https://github.com/diypa571
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function calculate() {
+        try {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+</script>
+
+</body>
+</html>
