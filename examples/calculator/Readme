@@ -1,12 +1,16 @@
 Lorca is simple to learn... using javascript and html and css, create your desktop to applications for Linux, Windows and Mac
 This example, is about creating a simple calculator using only javascript and the bootstrap 5.2 framework...
 
-Iam using Linux, to run it your Linux Machine,
+Iam using Linux, to run it your Linux Machine.
+Make sure you have golang already installed... if not use this command
+
+sudo apt install golang-go
+
 cd calculator 
 go run ./
 
 
-IN order to compile it into a binary file...
+In order to compile it into a binary file...
 run this command
 
 sudo bash build-linux.sh
